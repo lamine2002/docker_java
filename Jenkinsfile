@@ -1,9 +1,13 @@
 pipeline {
     agent any
+    tools{
+        maven 'maven'
+    }
 
     stages {
         stage('Build') {
             steps {
+                sh 'mvn -version'
                 // Clean the project
                 sh 'mvn clean'
 
@@ -23,6 +27,15 @@ pipeline {
             steps {
                 // Package the project
                 sh 'mvn package'
+            }
+        }
+
+        stage('SonarQube Analysis') {
+            steps {
+                def scannerHome = tool 'SonarScanner';
+                withSonarQubeEnv('SonarQube') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
     }
