@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'mvn -version'
                 // Clean the project
                 sh 'mvn clean'
 
