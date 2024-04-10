@@ -3,7 +3,7 @@ pipeline {
     tools{
         maven 'maven'
         // Add the Docker tool
-        docker 'docker'
+        //docker 'docker'
     }
 
     stages {
@@ -34,15 +34,15 @@ pipeline {
 
         stage('Docker Build and Push') {
             steps {
-                script {
+                //script {
                     // Login to Docker Hub
-                    docker.withRegistry('https://registry.hub.docker.com', 'dckr_pat_LPM9AKWaCb_0QjXtkpHJZKiN9QI') {
+                    //docker.withRegistry('https://registry.hub.docker.com', 'dckr_pat_LPM9AKWaCb_0QjXtkpHJZKiN9QI') {
                         // Build the Docker image using the Dockerfile in the root directory
-                        def appImage = docker.build("examen-devops:${env.BUILD_ID}", '.')
+                        //def appImage = docker.build("examen-devops:${env.BUILD_ID}", '.')
                         // Push the Docker image to Docker Hub
-                        appImage.push()
-                    }
-                }
+                        //appImage.push()
+                    //}
+                //}
             }
         }
 
