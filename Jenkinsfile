@@ -33,7 +33,7 @@ pipeline {
         }
 
         stage('Docker Build and Push') {
-            steps {
+            //steps {
                 //script {
                     // Login to Docker Hub
                     //docker.withRegistry('https://registry.hub.docker.com', 'dckr_pat_LPM9AKWaCb_0QjXtkpHJZKiN9QI') {
@@ -43,7 +43,7 @@ pipeline {
                         //appImage.push()
                     //}
                 //}
-            }
+            //}
         }
 
 
