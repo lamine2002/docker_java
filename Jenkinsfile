@@ -32,7 +32,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build and Push') {
+        //stage('Docker Build and Push') {
             //steps {
                 //script {
                     // Login to Docker Hub
@@ -44,7 +44,7 @@ pipeline {
                     //}
                 //}
             //}
-        }
+        //}
 
 
         stage('SonarQube Analysis') {
